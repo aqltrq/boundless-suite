@@ -1,7 +1,7 @@
 <project name="server" default="build">
   <import file="build/common.xml"/>
 
-  <property name="modules.list" value="geoserver,geowebcache,composer,wpsbuilder,dashboard,docs"/>
+  <property name="modules.list" value="geoserver,geowebcache,wpsbuilder,dashboard,docs"/>
 
   <target name="clean" description="Cleans project">
     <for list="${modules.list}" param="mod">

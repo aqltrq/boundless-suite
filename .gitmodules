@@ -16,9 +16,6 @@
 [submodule "geoserver/data_dir/externals/server-data"]
 	path = geoserver/data_dir/externals/server-data
 	url = https://github.com/boundlessgeo/suite-data.git
-[submodule "composer/composer"]
-	path = composer/composer
-	url = git@github.com:boundlessgeo/composer.git
 [submodule "wpsbuilder/wps-gui"]
 	path = wpsbuilder/wps-gui
 	url = https://github.com/boundlessgeo/wps-gui.git
