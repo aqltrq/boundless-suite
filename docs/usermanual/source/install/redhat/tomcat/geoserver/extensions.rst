@@ -87,6 +87,16 @@ GeoPackage extension
 
 .. include:: /install/include/ext/geopackage_verify.txt
 
+.. _install.redhat.tomcat.extensions.geomesa:
+
+GeoMesa extension
+-----------------
+
+.. include:: /install/include/ext/geomesa_install.txt
+
+.. include:: /install/include/ext/geomesa_verify.txt
+
+
 .. _install.redhat.tomcat.extensions.grib:
 
 GRIB extension
@@ -95,6 +105,16 @@ GRIB extension
 .. include:: /install/include/ext/grib_install.txt
 
 .. include:: /install/include/ext/grib_verify.txt
+
+
+.. _install.redhat.tomcat.extensions.gsr:
+
+GeoServices REST Extension
+--------------------------
+
+.. include:: /install/include/ext/gsr_install.txt
+
+.. include:: /install/include/ext/gsr_verify.txt
 
 
 .. _install.redhat.tomcat.extensions.inspire:

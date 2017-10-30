@@ -36,7 +36,7 @@ See the :ref:`install.ubuntu.packages.list` for details about the possible packa
 
    .. code-block:: bash
 
-      echo "deb [arch=amd64] https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/4.9.1/ubuntu trusty main" > /etc/apt/sources.list.d/boundless.list
+      echo "deb [arch=amd64] https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/1.0.0/ubuntu trusty main" > /etc/apt/sources.list.d/boundless.list
 
    Make sure to replace each instance of ``<username>`` and ``<password>`` with the user name and password supplied to you.
 
@@ -104,10 +104,58 @@ See the :ref:`install.ubuntu.packages.list` for details about the possible packa
 Upgrade
 -------
 
-Upgrading from 4.9.0 to |version|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrading from 4.9.1 or 4.10.0 to |version|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes how to upgrade Boundless Server 4.9.0 to |version| on Ubuntu Linux.
+This section describes how to upgrade Boundless Suite 4.9.1 or 4.10.0 to Boundless Server |version| on Red Hat-based Linux distributions.
+
+.. note::
+
+   If you made changes to the tomcat context files located in ``/etc/tomcat8/Catalina/localhost/``, please back them up now or your changes will be lost. After completing the upgrade process, restore the relevant portions of the backed up files.
+
+#. Change to the ``root`` user:
+
+   .. code-block:: bash
+
+      sudo su -
+
+#. Replace the 4.10.0 repo definition with the new repo definition. Open ``/etc/apt/sources.list.d/boundless.list`` and replace the contents with:
+
+   .. code-block:: none
+
+      deb [arch=amd64] https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/1.0.0/ubuntu trusty main
+
+   Make sure to replace each instance of ``<username>`` and ``<password>`` with the user name and password supplied to you.
+
+   .. note:: Your username is your email address. When entering your username into the ``Boundless.repo`` file, replace the ``@`` in your username with ``%40``.
+
+#. Refresh the apt repo data:
+
+   .. code-block:: bash
+
+      apt-get update
+
+#. Install all Boundless Server |version| packages corresponding to the ``suite-*`` packages which are currently installed. For example:
+
+   .. code-block:: bash
+
+      apt-get install boundless-server-geoserver boundless-server-docs boundless-server-dashboard
+
+#. Restart the server.
+
+   .. code-block:: bash
+
+      service tomcat8 restart
+
+#. Verify that the installation succeeded by opening your browser and navigating to one of the following URLs:
+
+   * http://localhost:8080/dashboard
+   * http://localhost:8080/geoserver
+
+Upgrading from 4.9.0 to 4.9.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section describes how to upgrade Boundless Suite 4.9.0 to Boundless Suite 4.9.1 on Ubuntu Linux.
 
 .. note::
 
@@ -123,7 +171,7 @@ This section describes how to upgrade Boundless Server 4.9.0 to |version| on Ubu
 
    .. code-block:: bash
 
-      apt-get remove boundless-server-*
+      apt-get remove suite-*
 
    Make note of which packages were removed this way.
 
@@ -137,7 +185,7 @@ This section describes how to upgrade Boundless Server 4.9.0 to |version| on Ubu
 
    .. code-block:: none
 
-      deb [arch=amd64] https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/4.9.1/ubuntu trusty main
+      deb [arch=amd64] https://<username>:<password>@downloads-repo.boundlessgeo.com/suite-repo/4.9.1/ubuntu trusty main
 
    Make sure to replace each instance of ``<username>`` and ``<password>`` with the user name and password supplied to you.
 
@@ -149,11 +197,11 @@ This section describes how to upgrade Boundless Server 4.9.0 to |version| on Ubu
 
       apt-get update
 
-#. Install all Boundless Server 4.9.1 packages corresponding to the ``boundless-server-*`` packages which were removed in step 1. For example:
+#. Install all Boundless Suite 4.9.1 packages corresponding to the ``suite-*`` packages which were removed in step 1. For example:
 
    .. code-block:: bash
 
-      apt-get install boundless-server-geoserver boundless-server-docs boundless-server-dashboard
+      apt-get install suite-geoserver suite-docs suite-dashboard
 
 
 Upgrading from 4.8 and older
@@ -281,7 +329,6 @@ The following packages add additional functionality to GeoServer. After installi
 For more information, please see the section on :ref:`GeoServer extensions <intro.extensions>`.
 
 .. include:: /install/include/server-gs-packages.txt
-
 
 Binary packages
 ~~~~~~~~~~~~~~~

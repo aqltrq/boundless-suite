@@ -86,7 +86,7 @@ Three other buttons are found below the map details:
 
 * The :guilabel:`gear` icon brings up the :guilabel:`Map Settings` page.
 * The :guilabel:`link` icon brings up a traditional GeoServer Layer Preview of the map.
-* The :guilabel:`js` icon brings up an OL3 Export dialog, for embedding the map in a web page.
+* The :guilabel:`js` icon brings up an OpenLayers Export dialog, for embedding the map in a web page.
 
 .. figure:: img/mapdetailsbuttons.png
 

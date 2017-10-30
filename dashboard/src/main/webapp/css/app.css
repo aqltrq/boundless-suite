@@ -138,7 +138,7 @@ a:focus, a:active {
 }
 
 .navbar-brand {
-  background: #28728d url(../img/suite-logo.png) no-repeat left center;
+  background: #28728d url(../img/server-logo.png) no-repeat left center;
   width: 300px;
   height: 60px;
 }
@@ -146,10 +146,10 @@ a:focus, a:active {
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi) {
   .navbar-brand {
-    background-image: url(../img/suite-logo@2x.png);
+    background-image: url(../img/server-logo@2x.png);
     width: 300px;
     height: 60px;
-    background-size: 170px 60px;
+    background-size: 207px 60px;
     background-repeat: no-repeat;
   }
 }
@@ -341,29 +341,29 @@ a.dash-component {
   border-right: solid 1px;
 }
 .dash-component.suite {
-   background-image: url(../img/suite_32.png);
-   background-size: 32px 32px;
+   background-image: url(../img/server_32.png);
+   background-size: 29px 32px;
 }
 .dash-component.postgis {
-   background-image: url(../img/postgis_suite_32.png);
+   background-image: url(../img/postgis_32.png);
 }
 .dash-component.geoserver {
-   background-image: url(../img/geoserver_suite_32.png);
+   background-image: url(../img/geoserver_32.png);
 }
 .dash-component.qgis {
    background-image: url(../img/desktop_32.png);
 }
 .dash-component.geowebcache {
-   background-image: url(../img/geowebcache_suite_32.png);
+   background-image: url(../img/geowebcache_32.png);
 }
 .dash-component.wabsdk {
-   background-image: url(../img/wabsdk_suite_32.png);
+   background-image: url(../img/wabsdk_32.png);
 }
 .dash-component.boundlesssdk {
-   background-image: url(../img/boundlesssdk_suite_32.png);
+   background-image: url(../img/boundlesssdk_32.png);
 }
 .dash-component.openlayers {
-   background-image: url(../img/openlayers_suite_32.png);
+   background-image: url(../img/openlayers_32.png);
 }
 
 /*

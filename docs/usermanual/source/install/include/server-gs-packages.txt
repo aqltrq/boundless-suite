@@ -5,10 +5,10 @@
 
    * - Package
      - Description
-   * - ``boundless-server-gs-arcsde``
-     - ArcSDE extension
    * - ``boundless-server-gs-app-schema``
      - Application Schema support
+   * - ``boundless-server-gs-arcsde``
+     - ArcSDE extension
    * - ``boundless-server-gs-cloudwatch``
      - Connection to :ref:`Amazon CloudWatch <sysadmin.cloudwatch>` monitoring
    * - ``boundless-server-gs-cluster``
@@ -19,10 +19,14 @@
      - DB2 database extension
    * - ``boundless-server-gs-gdal``
      - GDAL extension
+   * - ``boundless-server-gs-geomesa-accumulo``
+     - :ref:`GeoMesa <dataadmin.geomesa>` data source support
    * - ``boundless-server-gs-geopkg``
      - GeoPackage extension
    * - ``boundless-server-gs-grib``
      - GRIB data format extension
+   * - ``boundless-server-gs-gsr``
+     - GeoServices REST API extension
    * - ``boundless-server-gs-inspire``
      - Additional WMS and WFS metadata configuration for INSPIRE compliance
    * - ``boundless-server-gs-jdbcconfig``

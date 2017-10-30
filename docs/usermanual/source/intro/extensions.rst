@@ -79,6 +79,16 @@ The GDAL Image Formats extension adds the ability for GeoServer to publish data 
 The instructions for enabling these formats may require a few additional steps from the standard extension installation instructions as indicated above. Please see the section on :ref:`installing GDAL image formats <dataadmin.gdal>` for more information.
 
 
+.. _intro.extensions.geomesa:
+
+GeoMesa
+-------
+
+The GeoMesa extension allows GeoServer to publish data from GeoMesa data stores. `GeoMesa <http://geomesa.org>`_ is a database built on top of `Apache Accumulo <https://accumulo.apache.org/>`_. 
+
+For more information, please see the :ref:`dataadmin.geomesa` section.
+
+
 .. _intro.extensions.geopackage:
 
 GeoPackage
@@ -93,6 +103,16 @@ GRIB
 ----
 
 The GRIB extension adds support for GeoServer to publish data in `GRIB <https://en.wikipedia.org/wiki/GRIB>`_ format. GRIB is a data format commonly used in meteorology to store weather data, both historical and predicted. This version includes support for reading data in GRIB 1 and GRIB 2 formats.
+
+
+.. _intro.extensions.gsr:
+
+GeoServices REST API
+--------------------
+
+The GeoServices REST API extension allows limited compatiblity with ArcGIS clients.
+
+For more information, please see the :ref:`sysadmin.gsr` section.
 
 
 .. _intro.extensions.inspire:

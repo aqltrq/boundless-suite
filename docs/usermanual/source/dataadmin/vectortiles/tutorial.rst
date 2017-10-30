@@ -27,7 +27,7 @@ On the other hand, the main disadvantage of vector tiles is that the geographic 
 Vector tile formats
 -------------------
 
-GeoServer can also produce vector tiles in three formats: GeoJSON, TopoJSON, and MapBox Vector (MVT). These are also supported by OpenLayers 3 and other clients.
+GeoServer can also produce vector tiles in three formats: GeoJSON, TopoJSON, and MapBox Vector (MVT). These are also supported by OpenLayers and other clients.
 
 * GeoJSON is the most human readable and the recommended format for people new to vector tiles.
 * MVT is the preferred format for production.

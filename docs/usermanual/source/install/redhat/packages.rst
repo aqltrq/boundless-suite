@@ -39,7 +39,7 @@ See the :ref:`install.redhat.packages.list` for details about the possible packa
 
       [boundless-server]
       name=Boundless Server Repository
-      baseurl=https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/4.9.1/el/6/x86_64
+      baseurl=https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/1.0.0/el/6/x86_64
       enabled=1
       gpgcheck=1
       gpgkey=file:///etc/pki/boundless/GPG-KEY-Boundless
@@ -105,10 +105,71 @@ See the :ref:`install.redhat.packages.list` for details about the possible packa
 Upgrade
 -------
 
-Upgrading from 4.9.0 to |version|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrading from 4.9.1 or 4.10.0 to |version|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes how to upgrade Boundless Server 4.9.0 to |version| on Red Hat-based Linux distributions.
+This section describes how to upgrade Boundless Suite 4.9.1 or 4.10.0 to Boundless Server |version| on Red Hat-based Linux distributions.
+
+.. note::
+
+   If you made changes to the suite-docs tomcat context file located in ``/etc/tomcat8/Catalina/localhost/suite-docs.xml``, please back it up now or your changes will be lost (The other context files will be preserved).
+
+#. Change to the ``root`` user:
+
+   .. code-block:: bash
+
+      sudo su -
+
+#. Replace the 4.10.0 repo definition with the new repo definition. Open ``/etc/yum.repos.d/Boundless.repo`` and replace the contents with:
+
+   .. code-block:: none
+
+      [boundless-server]
+      name=Boundless Server Repository
+      baseurl=https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/1.0.0/el/6/x86_64
+      enabled=1
+      gpgcheck=1
+      gpgkey=file:///etc/pki/boundless/GPG-KEY-Boundless
+
+   Make sure to replace each instance of ``<username>`` and ``<password>`` with the user name and password supplied to you.
+
+   .. note:: Your username is your email address. When entering your username into the ``Boundless.repo`` file, replace the ``@`` in your username with ``%40``.
+
+#. Refresh the yum repo data:
+
+   .. code-block:: bash
+
+      yum clean all
+
+#. Install all Boundless Server |version| packages corresponding to the ``suite-*`` packages which are currently installed. For example:
+
+   .. code-block:: bash
+
+      yum install boundless-server-geoserver boundless-server-docs boundless-server-dashboard
+
+#. Update the tomcat context files. For each file ending in ".new" in ``/etc/tomcat8/Catalina/localhost/``, copy it to a ".xml" file. For example:
+
+   .. code-block:: bash
+
+      cp -p geoserver.xml.new geoserver.xml
+
+#. If you had previously made any changes to the context files, copy these changes from the ".orig" file into the corresponding ".xml" file.
+
+#. Restart the server.
+
+   .. code-block:: bash
+
+      service tomcat8 restart
+
+#. Verify that the installation succeeded by opening your browser and navigating to one of the following URLs:
+
+   * http://localhost:8080/dashboard
+   * http://localhost:8080/geoserver
+
+Upgrading from 4.9.0 to 4.9.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This section describes how to upgrade Boundless Suite 4.9.0 to Boundless Suite 4.9.1 on Red Hat-based Linux distributions.
 
 .. note::
 
@@ -124,7 +185,7 @@ This section describes how to upgrade Boundless Server 4.9.0 to |version| on Red
 
    .. code-block:: bash
 
-      yum remove boundless-server-*
+      yum remove suite-*
 
    Make note of which packages were removed this way.
 
@@ -140,7 +201,7 @@ This section describes how to upgrade Boundless Server 4.9.0 to |version| on Red
 
       [boundless-server]
       name=Boundless Server Repository
-      baseurl=https://<username>:<password>@downloads-repo.boundlessgeo.com/server-repo/4.9.1/el/6/x86_64
+      baseurl=https://<username>:<password>@downloads-repo.boundlessgeo.com/suite-repo/4.9.1/el/6/x86_64
       enabled=1
       gpgcheck=1
       gpgkey=file:///etc/pki/boundless/GPG-KEY-Boundless
@@ -155,17 +216,17 @@ This section describes how to upgrade Boundless Server 4.9.0 to |version| on Red
 
       yum clean all
 
-#. Install all Boundless Server 4.9.1 packages corresponding to the ``boundless-server-*`` packages which were removed in step 1. For example:
+#. Install all Boundless Suite 4.9.1 packages corresponding to the ``suite-*`` packages which were removed in step 1. For example:
 
    .. code-block:: bash
 
-      yum install boundless-server-geoserver boundless-server-docs boundless-server-dashboard
+      yum install suite-geoserver suite-docs suite-dashboard
 
 
 Upgrading from 4.8 and older
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes how to upgrade Boundless Server 4.8 and earlier to |version| on Red Hat-based Linux distributions.
+This section describes how to upgrade OpenGeo Suite 4.8 and earlier to |version| on Red Hat-based Linux distributions.
 
 .. warning:: We do **not** recommend upgrading Boundless Server on a production server. Instead, do a new install on new machine, then transfer your data and settings to the new machine.
 

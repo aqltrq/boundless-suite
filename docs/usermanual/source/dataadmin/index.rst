@@ -46,6 +46,7 @@ Working with external databases in GeoServer
 
    geopackage/index
    oracle/index
+   geomesa/index
    mongodb/index
 
 

@@ -1,0 +1,7 @@
+To install :ref:GeoServices REST <intro.extensions.gsr>` support in GeoServer, you will need to copy some files to the proper location. The files to be copied are inside the Boundless Server extensions bundle (:file:`BoundlessSuite-ext.zip`).
+
+#. Inside the Boundless Server extensions bundle, navigate to the :file:`gsr` directory.
+
+#. Copy the contents of the :file:`gsr` directory into the library directory (:file:`WEB-INF\\lib`) of your GeoServer instance. For example, if your GeoServer application is located at :file:`C:\\Program Files\\Tomcat\\webapps\\geoserver`, copy the files to :file:`C:\\Program Files\\Tomcat\\webapps\\geoserver\\WEB-INF\\lib`.
+
+#. Restart the server.

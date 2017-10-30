@@ -128,6 +128,8 @@
         <exclude name="gs-wps-core-*.jar"/>
         <exclude name="gt-xsd-wps-*.jar"/>
         <exclude name="net.opengis.wps-*.jar"/>
+        <exclude name="compress-lzf-*.jar"/>
+        <exclude name="gson-*.jar"/>
       </patternset>
     </unzip>
   </target>

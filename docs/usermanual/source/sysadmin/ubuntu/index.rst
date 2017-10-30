@@ -180,7 +180,7 @@ GeoServer GeoJSON output is now provided in x/y/z order as required by the speci
             }
          }
    
-To restore the previous ``crs`` representation for compatibility reasons (especially when working with OpenLayers 3):
+To restore the previous ``crs`` representation for compatibility reasons (especially when working with OpenLayers):
 
 #. Navigate to :file:`/etc/tomcat8/Catalina/localhost/` and edit the file :file:`geoserver.xml`.
 
