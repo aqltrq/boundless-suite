@@ -276,7 +276,7 @@ Common build targets.
   -->
   <target name="mvn" depends="init-mvn">
      <property name="dir" value="${basedir}"/>
-     <property name="flags" value=""/>
+     <property name="flags" value="-B"/>
      <property name="goals" value="clean install"/>
 
      <condition property="mvn_settings" value="-s ${mvn.settings}" else="">
