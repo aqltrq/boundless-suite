@@ -55,6 +55,9 @@
         <exclude name="sqlite-jdbc-*.jar"/>
         <!-- exclude conflicting jars between geomesa and other extensions -->
         <exclude name="gt-imageio-ext-gdal-*.jar"/>
+        <exclude name="core-*.jar"/>
+        <exclude name="gson-*.jar"/>
+        <exclude name="jts-core-*.jar"/>
       </patternset>
     </untar>
     <!-- Copy excluded dependencies -->
